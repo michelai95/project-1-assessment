@@ -2,16 +2,23 @@ let addition = document.querySelector('#addition');
 let subtraction = document.querySelector('#subtraction');
 let result = document.querySelector('#count');
 let input = document.querySelector('#submit');
+let i = 0; 
 
 
 addition.addEventListener('click', function() {
-    input.value = parseInt(input.value) + 1;
-    result.textContent = input.value;
+    i += parseInt(input.value);
+    result.textContent = i;
+    if (i>-1) {
+        result.classList.remove('red')
+    }
 })
 
 subtraction.addEventListener('click', function() {
-    input.value = parseInt(input.value) - 1;
-    result.textContent = input.value;
+    i -= parseInt(input.value);
+    result.textContent = i;
+    if (i<0) {
+        result.classList.add('red')
+    }
 })
 
 
